@@ -1,7 +1,7 @@
 package by.itacademy.javaenterprise.seledtsova.joinedtable.dao;
 
-import by.itacademy.javaenterprise.seledtsova.joinedtable.dao.impl.CardDaoImpl;
-import by.itacademy.javaenterprise.seledtsova.joinedtable.entity.Card;
+import by.itacademy.javaenterprise.seledtsova.joinedtable.dao.impl.ChequeDaoImpl;
+import by.itacademy.javaenterprise.seledtsova.joinedtable.entity.Cheque;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,54 +13,55 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
-public class CardDaoTest {
+public class ChequeTest {
+
     private EntityManager entityManagerMock;
     private EntityTransaction entityTransactionMock;
-    private CardDaoImpl cardDao;
+    private ChequeDao chequeDao;
 
     @BeforeEach
     public void setUpBeforeEachTest() {
         entityManagerMock = Mockito.mock(EntityManager.class);
         entityTransactionMock = Mockito.mock(EntityTransaction.class);
-        cardDao = new CardDaoImpl(entityManagerMock);
+        chequeDao = new ChequeDaoImpl(entityManagerMock);
     }
 
     @Test
     void shouldFindCardByIdTest() {
-        Card card = new Card();
+        Cheque cheque = new Cheque();
         Long id = 1L;
-        card.setId(id);
-        when(entityManagerMock.find(Card.class, id)).thenReturn(card);
-        Card card1 = cardDao.findById(id);
-        assertEquals(id, card1.getId());
+        cheque.setId(id);
+        when(entityManagerMock.find(Cheque.class, id)).thenReturn(cheque);
+        Cheque cheque1 = chequeDao.findById(id);
+        assertEquals(id, cheque1.getId());
     }
 
     @Test
     void shouldFindCardWithWrongIdTest() {
         Long id = -1L;
-        assertNull(cardDao.findById(id));
+        assertNull(chequeDao.findById(id));
     }
 
     @Test
     public void shouldSaveUpdateCardTest() {
         Long id = 4L;
-        Card card = new Card();
-        card.setId(id);
+        Cheque cheque = new Cheque();
+        cheque.setId(id);
         ;
-        card.setCardType("Visa");
-        card.setCardNumber(121);
-        when(entityManagerMock.find(Card.class, id)).thenReturn(card);
-        assertEquals(card.getId(), id);
+        cheque.setChequeType("Order");
+        cheque.setChequeNumber(1247);
+        when(entityManagerMock.find(Cheque.class, id)).thenReturn(cheque);
+        assertEquals(cheque.getId(), id);
     }
 
     @Test
     public void shouldDeleteCardTest() {
         Long id = 2L;
-        Card card = new Card();
-        card.setId(id);
+        Cheque cheque = new Cheque();
+        cheque.setId(id);
         when(entityManagerMock.getTransaction()).thenReturn(entityTransactionMock);
-        when(entityManagerMock.find(Card.class, id)).thenReturn(card).thenReturn(null);
-        cardDao.deleteById(id);
-        assertNull(cardDao.findById(id));
+        when(entityManagerMock.find(Cheque.class, id)).thenReturn(cheque).thenReturn(null);
+        chequeDao.deleteById(id);
+        assertNull(chequeDao.findById(id));
     }
 }

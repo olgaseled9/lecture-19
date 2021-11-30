@@ -6,11 +6,17 @@
 5. DAO
 6. Tests
 
-# 
-7. strategy = InheritanceType.SINGLE_TABLE (inludes class Shape,Circle, Rectangle)
+### What was done:
+POJO classes were created to implement 3 inheritance strategies in Hibernate:
+1. Shape, Circle and Rectangle classes are created to use singe table inheritance strategy;
+2. Payment, Card and Cheque classes are created to use join table inheritance strategy;
+3. classes are created to use join table inheritance strategy.
+Also implemented DAO for these classes and some tests
 
-###   How to used:
+## Technologies
+Java version: 11 Postgres, database docker-compose, Flyway, Hibernate, Slf4j+logback, Lombok
 
+###   How to used ?
 Build project: $mvn clean install
 $docker-compose up -d
 mvn flyway:migrate
