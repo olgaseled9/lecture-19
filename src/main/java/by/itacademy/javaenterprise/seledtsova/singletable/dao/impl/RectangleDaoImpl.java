@@ -7,12 +7,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 
-public class RectangleImpl implements RectangleDao {
+public class RectangleDaoImpl implements RectangleDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(RectangleImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(RectangleDaoImpl.class);
     private EntityManager entityManager;
 
-    public RectangleImpl(EntityManager entityManager) {
+    public RectangleDaoImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 

@@ -27,7 +27,7 @@ public class CircleDaoTest {
     }
 
     @Test
-    void shouldFindCicleByIdTest() {
+    void shouldFindCircleByIdTest() {
         Circle circle = new Circle();
         Long id = 1L;
         circle.setShapeId(id);

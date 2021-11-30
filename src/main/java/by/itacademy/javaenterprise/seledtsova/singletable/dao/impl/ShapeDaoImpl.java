@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ShapeDaoImpl implements ShapeDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(ShapeDao.class);
+    private static final Logger logger = LoggerFactory.getLogger(ShapeDaoImpl.class);
     private EntityManager entityManager;
 
     public ShapeDaoImpl(EntityManager entityManager) {
@@ -25,7 +25,7 @@ public class ShapeDaoImpl implements ShapeDao {
             Query query = entityManager.createQuery(queryString);
             return query.getResultList();
         } catch (Exception e) {
-            logger.error("Cannot get all items " + e.getMessage(), e);
+            logger.error("Cannot get all shapes " + e.getMessage(), e);
         }
         return null;
     }

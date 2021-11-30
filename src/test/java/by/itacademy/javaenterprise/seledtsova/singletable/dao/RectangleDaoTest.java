@@ -1,6 +1,6 @@
 package by.itacademy.javaenterprise.seledtsova.singletable.dao;
 
-import by.itacademy.javaenterprise.seledtsova.singletable.dao.impl.RectangleImpl;
+import by.itacademy.javaenterprise.seledtsova.singletable.dao.impl.RectangleDaoImpl;
 import by.itacademy.javaenterprise.seledtsova.singletable.entity.Rectangle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,7 +23,7 @@ public class RectangleDaoTest {
     public void setUpBeforeEachTest() {
         entityManagerMock = Mockito.mock(EntityManager.class);
         entityTransactionMock = Mockito.mock(EntityTransaction.class);
-        rectangleDao = new RectangleImpl(entityManagerMock);
+        rectangleDao = new RectangleDaoImpl(entityManagerMock);
     }
 
     @Test
