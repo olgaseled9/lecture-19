@@ -20,4 +20,5 @@ Java version: 11 Postgres, database docker-compose, Flyway, Hibernate, Slf4j+log
 Build project:
 1. $mvn clean install
 2. $docker-compose up -d
-3. Run Runner.class
+3. mvn flyway:migrate
+4. Run Runner.class
