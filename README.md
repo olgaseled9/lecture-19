@@ -17,7 +17,7 @@ Also implemented DAO for these classes and some tests
 Java version: 11 Postgres, database docker-compose, Flyway, Hibernate, Slf4j+logback, Lombok
 
 ###   How to used ?
-Build project: $mvn clean install
-$docker-compose up -d
-mvn flyway:migrate
-Run Runner.class
+Build project:
+1. $mvn clean install
+2. $docker-compose up -d
+3. Run Runner.class
