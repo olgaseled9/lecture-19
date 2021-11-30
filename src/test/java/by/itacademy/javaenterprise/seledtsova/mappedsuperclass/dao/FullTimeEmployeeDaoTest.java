@@ -8,6 +8,7 @@ import org.mockito.Mockito;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -49,7 +50,7 @@ public class FullTimeEmployeeDaoTest {
         fullTimeEmployee.setId(id);
         fullTimeEmployee.setFirstName("James");
         fullTimeEmployee.setLastName("Cannon");
-        fullTimeEmployee.setSalary(5852);
+        fullTimeEmployee.setSalary(BigDecimal.valueOf(21500));
         when(entityManagerMock.find(FullTimeEmployee.class, id)).thenReturn(fullTimeEmployee);
         assertEquals(fullTimeEmployee.getId(), id);
     }

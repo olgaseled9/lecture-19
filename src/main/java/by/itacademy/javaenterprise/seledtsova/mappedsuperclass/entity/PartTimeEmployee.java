@@ -2,8 +2,10 @@ package by.itacademy.javaenterprise.seledtsova.mappedsuperclass.entity;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @NoArgsConstructor
@@ -14,5 +16,6 @@ import javax.persistence.Table;
 @Table(name = "part_time_employee")
 public class PartTimeEmployee extends Employee {
 
-    private int hourlyRate;
+    @Column(name = "hourly_rate")
+    private BigDecimal hourlyRate;
 }

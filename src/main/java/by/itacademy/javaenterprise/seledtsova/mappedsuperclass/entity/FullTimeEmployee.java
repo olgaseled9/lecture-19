@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @ToString
@@ -13,5 +14,6 @@ import javax.persistence.Table;
 @Setter
 @Table(name = "full_time_employee")
 public class FullTimeEmployee extends Employee {
-    private int salary;
+
+    private BigDecimal salary;
 }

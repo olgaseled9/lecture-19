@@ -8,6 +8,10 @@ import by.itacademy.javaenterprise.seledtsova.joinedtable.dao.impl.ChequeDaoImpl
 import by.itacademy.javaenterprise.seledtsova.joinedtable.dao.impl.PaymentDaoImpl;
 import by.itacademy.javaenterprise.seledtsova.joinedtable.entity.Card;
 import by.itacademy.javaenterprise.seledtsova.joinedtable.entity.Cheque;
+import by.itacademy.javaenterprise.seledtsova.mappedsuperclass.dao.FullTimeEmployeeDao;
+import by.itacademy.javaenterprise.seledtsova.mappedsuperclass.dao.PartTimeEmployeeDao;
+import by.itacademy.javaenterprise.seledtsova.mappedsuperclass.dao.impl.FullTimeEmployeeDaoImpl;
+import by.itacademy.javaenterprise.seledtsova.mappedsuperclass.dao.impl.PartTimeEmployeeDaoImpl;
 import by.itacademy.javaenterprise.seledtsova.singletable.dao.CircleDao;
 import by.itacademy.javaenterprise.seledtsova.singletable.dao.RectangleDao;
 import by.itacademy.javaenterprise.seledtsova.singletable.dao.ShapeDao;
@@ -57,6 +61,11 @@ public class Runner {
         chequeDao.saveOrUpdate(cheque);
         cardDao.saveOrUpdate(card);
         logger.info("{}", paymentDao.findAll());
+
+        FullTimeEmployeeDao fullTimeEmployeeDao = new FullTimeEmployeeDaoImpl(entityManager);
+        PartTimeEmployeeDao partTimeEmployeeDao = new PartTimeEmployeeDaoImpl(entityManager);
+        logger.info("{}", fullTimeEmployeeDao.findById(100L));
+        logger.info("{}", partTimeEmployeeDao.findById(88L));
         entityManager.close();
     }
 }

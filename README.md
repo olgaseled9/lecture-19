@@ -10,7 +10,7 @@
 POJO classes were created to implement 3 inheritance strategies in Hibernate:
 1. Shape, Circle and Rectangle classes are created to use singe table inheritance strategy;
 2. Payment, Card and Cheque classes are created to use join table inheritance strategy;
-3. classes are created to use join table inheritance strategy.
+3. Employee, FullTimeEmployee, PartTimeEmployee, classes are created to use join table inheritance strategy.
 Also implemented DAO for these classes and some tests
 
 ## Technologies
